@@ -1,12 +1,7 @@
 # ESM-Scan
 Complete saturation mutagenesis of a protein using ESM
 
-Python script and a Google Colab notebook/web server
-
-Analyze your own sequence here: https://colab.research.google.com/github/xuebingwu/ESM-Scan/blob/main/esm-scan-colab.ipynb
-
-## User interface
-![interface](./colab-gui2.png?raw=true "Colab interface")
+Analyze your own sequence using Google colab: https://colab.research.google.com/github/xuebingwu/ESM-Scan/blob/main/esm-scan-colab.ipynb
 
 **Input**
 * A single protein sequence
