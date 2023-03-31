@@ -212,9 +212,7 @@ def main(args):
     for model_location in args.model_location:
         model, alphabet = pretrained.load_model_and_alphabet(model_location)
         model.eval()
-        
-        print("model loaded")
-        
+                
         if torch.cuda.is_available() and not args.nogpu:
             model = model.cuda()
             print("Transferred model to GPU")
