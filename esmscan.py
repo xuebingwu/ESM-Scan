@@ -16,6 +16,7 @@ from Bio import SeqIO
 import itertools
 from typing import List, Tuple
 import numpy as np
+from matplotlib import pylab
 
 # xw
 def generate_all_mutations(sequence,output_file):
@@ -26,22 +27,20 @@ def generate_all_mutations(sequence,output_file):
             for aa in aas:
                 f.write(sequence[i]+str(i+1)+aa+'\n')
     f.close()
-  
-import numpy as np
-from matplotlib import pylab
 
-def plot_saturation_mutagenesis(seq,output_prefix):
-
-    # read output 
-    df=pd.read_csv(str(output_prefix)+'-saturation-mutagenesis.csv')
+# xw
+def plot_esm_scan(seq,output_prefix):
+    # read output in a list format
+    df=pd.read_csv(str(output_prefix)+'-res-in-list.csv')
     
     # convert to a matrix, each row is a wild type aa/position in the sequence, each column is a mutation
     d = np.array(df[ df.columns[1] ]).reshape(len(seq),20)
     
+    # convert it to a data frame
     df2 = pd.DataFrame(d, columns = [aa for aa in 'ACDEFGHIKLMNPQRSTVWY'], index = [seq[x]+str(x+1) for x in range(len(seq))] )
-    df2.to_csv(str(args.output_prefix)+'-saturation-mutagenesis-matrix.csv')
-            #seq='MSHRKFSAPRHGHLGFLPHKRSHRHRGKVKTWPRDDPSQPVHLTAFLGYKAGMTHTLREVHRPGLKISKREEVEAVTIVETPPLVVVGVVGYVATPRGLRSFKTIFAEHLSDECRRRFYKDWHKSKKKAFTKACKRWRDTDGKKQLQKDFAAMKKYCKVIRVIVHTQMKLLPFRQKKAHIMEIQLNGGTVAEKVAWAQARLEKQVPVHSVFSQSEVIDVIAVTKGRGVKGVTSRWHTKKLPRKTHKGLRKVACIGAWHPARVGCSIARAGQKGYHHRTELNKKIFRIGRGPHMEDGKLVKNNASTSYDVTAKSITPLGGFPHYGEVNNDFVMLKGCIAGTKKRVITLRKSLLVHHSRQAVENIELKFIDTTSKFGHGRFQTAQEKRAFMGPQKKHLEKETPETSGDL'
-
+    df2.to_csv(str(args.output_prefix)+'-res-in-matrix.csv')
+    
+    # plot matrix as heatmap
     pylab.rcParams['pdf.fonttype']=42
     pylab.rcParams['font.size']=12
     pylab.rcParams['figure.figsize'] = [8, len(seq)/3]
@@ -64,16 +63,15 @@ def plot_saturation_mutagenesis(seq,output_prefix):
     # colorbar
     fig.colorbar(im,orientation="horizontal")
 
-    fig.savefig(str(output_prefix)+'-saturation-mutagenesis.pdf')
+    fig.savefig(str(output_prefix)+'-matrix.pdf')
     
     # boxplot
     pylab.close()
     pylab.rcParams['pdf.fonttype']=42
     pylab.rcParams['font.size']=12
     pylab.rcParams['figure.figsize'] = [8, len(seq)/3]
-    boxplot = df2.T.boxplot(grid=False,vert=False) 
+    boxplot = df2[::-1].T.boxplot(grid=False,vert=False) 
     pylab.savefig(str(output_prefix)+'-boxplot.pdf')
-
 
 def remove_insertions(sequence: str) -> str:
     """ Removes any insertions into the sequence. Needed to load aligned sequences in an MSA. """
@@ -297,10 +295,10 @@ def main(args):
                     axis=1,
                 )
 
-    df.to_csv(str(args.output_prefix)+'-saturation-mutagenesis.csv',index=False)
+    df.to_csv(str(args.output_prefix)+'-res-in-list.csv',index=False)
 
     # xw: plot
-    plot_saturation_mutagenesis(args.sequence,args.output_prefix)
+    plot_esm_scan(args.sequence,args.output_prefix)
 
 if __name__ == "__main__":
     parser = create_parser()
