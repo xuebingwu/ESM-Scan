@@ -52,7 +52,6 @@ def plot_saturation_mutagenesis(seq,output_prefix):
     ax.set_ylabel('Wild type')
     yticks=list(range(len(seq)))
     ax.set_yticks(yticks)
-    #ax.set_yticklabels(aa for aa in seq)
     ax.set_yticklabels( seq[x]+str(x+1) for x in range(len(seq)))
 
     ax.xaxis.tick_top()
@@ -60,20 +59,21 @@ def plot_saturation_mutagenesis(seq,output_prefix):
     ax.set_xlabel('Mutant')
     xticks=list(range(20))
     ax.set_xticks(xticks)
-    #ax.set_xticklabels('%d'%(x+1) for x in range(20))
     ax.set_xticklabels(aa for aa in 'ACDEFGHIKLMNPQRSTVWY')
-    
-    '''
-    secax = ax.secondary_xaxis('top')
-    secax.set_xticks(xticks)
-    secax.set_xticklabels(aa for aa in 'ACDEFGHIKLMNPQRSTVWY')
-    secax.set_xlabel('Mutant')
-    '''
 
     # colorbar
     fig.colorbar(im,orientation="horizontal")
 
     fig.savefig(str(output_prefix)+'-saturation-mutagenesis.pdf')
+    
+    # boxplot
+    pylab.close()
+    pylab.rcParams['pdf.fonttype']=42
+    pylab.rcParams['font.size']=12
+    pylab.rcParams['figure.figsize'] = [8, len(seq)/3]
+    boxplot = df2.T.boxplot(grid=False,vert=False) 
+    pylab.savefig(str(output_prefix)+'-boxplot.pdf')
+
 
 def remove_insertions(sequence: str) -> str:
     """ Removes any insertions into the sequence. Needed to load aligned sequences in an MSA. """
