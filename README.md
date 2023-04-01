@@ -44,11 +44,9 @@ python esmscan.py --model-location {model folder}/esm1v_t33_650M_UR90S_1.pt --se
 
 **Limitations**
 * A gmail account is required to run Google Colab notebooks.
-* This notebook was designed for analyzing a single sequence. 
-* Only sequences of length ~400aa have been tested. Longer sequences may fail due to a lack of memory.
-* The first run is slow due to the need to download pre-trained ESM models.  
-* GPU may not be available and running the prediction on CPU will be significantly slower. 
-* Your browser can block the pop-up for downloading the result file. You can choose the `save_to_google_drive` option to upload to Google Drive instead or manually download the result file: Click on the little folder icon to the left, navigate to file: `res.zip`, right-click and select \"Download\".
+* This script/notebook was designed for analyzing a single sequence. 
+* Only runs on GPU, which may not be available sometimes in Colab.
+* In Colab, your browser can block the pop-up for downloading the result file. You can choose the `save_to_google_drive` option to upload to Google Drive instead or manually download the result file: Click on the little folder icon to the left, navigate to file: `res.zip`, right-click and select \"Download\".
 
 
 **Bugs**
@@ -61,5 +59,5 @@ python esmscan.py --model-location {model folder}/esm1v_t33_650M_UR90S_1.pt --se
 **Acknowledgments**
 - We thank the [ESM](https://github.com/facebookresearch/esm) team for developing an excellent model and open sourcing the software. 
 
-- This notebook is modeld after the [ColabFold notebook](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb).
+- The notebook is modeld after the [ColabFold notebook](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb).
 
