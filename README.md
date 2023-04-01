@@ -1,8 +1,19 @@
 # ESM-Scan
-Complete saturation mutagenesis of a protein using ESM
+
+*in silico* complete saturation mutagenesis of a protein using ESM
+
+**Colab webserver**
 
 Analyze your own sequence using Google colab: https://colab.research.google.com/github/xuebingwu/ESM-Scan/blob/main/esm-scan-colab.ipynb
 
+**Run locally**
+
+```
+pip install biopython
+pip install fair-esm 
+git clone https://github.com/xuebingwu/ESM-Scan.git
+```
+  
 **Input**
 * A single protein sequence
 
