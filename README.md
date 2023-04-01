@@ -1,12 +1,15 @@
-# ESM-Scan
+# <font color='MediumSlateBlue '> **ESM-Scan**  </font> 
+## *in silico* complete saturation mutagenesis of a protein using Evolutionary Scale Modeling ([ESM](https://github.com/facebookresearch/esm))
+---
+[Xuebing Wu lab @ Columbia](https://xuebingwu.github.io/)     |     [GitHub repository](https://github.com/xuebingwu/ESMScan) 
 
-*in silico* complete saturation mutagenesis of a protein using ESM
 
-**Colab webserver**
+
+## Colab webserver
 
 Analyze your own sequence using Google colab: https://colab.research.google.com/github/xuebingwu/ESM-Scan/blob/main/esm-scan-colab.ipynb
 
-**Run locally**
+## Run locally
 
 * Installation
 
