@@ -128,7 +128,7 @@ def create_parser():
     parser.add_argument(
         "--output-prefix",
         type=pathlib.Path,
-        default="output",
+        default="ESMScan",
         help="Output file containing the deep mutational scan along with predictions",
     )
     parser.add_argument(
