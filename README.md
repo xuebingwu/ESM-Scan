@@ -8,10 +8,25 @@ Analyze your own sequence using Google colab: https://colab.research.google.com/
 
 **Run locally**
 
+* Installation
+
 ```
 pip install biopython
 pip install fair-esm 
 git clone https://github.com/xuebingwu/ESM-Scan.git
+```
+
+* Download pre-trained ESM model
+
+```
+wget https://dl.fbaipublicfiles.com/fair-esm/models/esm1v_t33_650M_UR90S_1.pt
+```
+
+* Run 
+
+```
+cd ESM-Scan
+python esmscan.py --model-location {model folder}/esm1v_t33_650M_UR90S_1.pt --sequence MSHRKFSAPRHGHLGFLPHKRSHRHRGKVKTWPRDDPSQPVHLTAFLGYKAGMTHTLREVHRPGLKISKREEVEAVTIVETPPLVVVGVVGYVATPRGLRSFKTIFAEHLSDECRRRFYKDWHKSKKKAFTKACKRWRDTDGKKQLQKDFAAMKKYCKVIRVIVHTQMKLLPFRQKKAHIMEIQLNGGTVAEKVAWAQARLEKQVPVHSVFSQSEVIDVIAVTKGRGVKGVTSRWHTKKLPRKTHKGLRKVACIGAWHPARVGCSIARAGQKGYHHRTELNKKIFRIGRGPHMEDGKLVKNNASTSYDVTAKSITPLGGFPHYGEVNNDFVMLKGCIAGTKKRVITLRKSLLVHHSRQAVENIELKFIDTTSKFGHGRFQTAQEKRAFMGPQKKHLEKETPETSGDL
 ```
   
 **Input**
