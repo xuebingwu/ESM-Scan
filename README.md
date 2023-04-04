@@ -4,10 +4,7 @@
 
 # <font color='MediumSlateBlue '> **ESM-Scan**  </font> 
 
-## *in silico* complete saturation mutagenesis of a protein using Evolutionary Scale Modeling ([ESM](https://github.com/facebookresearch/esm))
-
-
-For an input protein sequence, evaluate the impact of every possible mutations.
+## Predict the impact of every possible mutation in a protein using Evolutionary Scale Modeling ([ESM](https://github.com/facebookresearch/esm))
 
 ---
 
