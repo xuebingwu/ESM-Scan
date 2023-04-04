@@ -1,5 +1,5 @@
 
-[Xuebing Wu lab @ Columbia](https://xuebingwu.github.io/)     |     [GitHub repository](https://github.com/xuebingwu/ESMScan) 
+[Xuebing Wu lab @ Columbia](https://xuebingwu.github.io/)    
 ---
 
 # <font color='MediumSlateBlue '> **ESM-Scan**  </font> 
