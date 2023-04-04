@@ -1,8 +1,15 @@
-# <font color='MediumSlateBlue '> **ESM-Scan**  </font> 
-## *in silico* complete saturation mutagenesis of a protein using Evolutionary Scale Modeling ([ESM](https://github.com/facebookresearch/esm))
----
-[Xuebing Wu lab @ Columbia](https://xuebingwu.github.io/)     |     [GitHub repository](https://github.com/xuebingwu/ESMScan) 
 
+[Xuebing Wu lab @ Columbia](https://xuebingwu.github.io/)     |     [GitHub repository](https://github.com/xuebingwu/ESMScan) 
+---
+
+# <font color='MediumSlateBlue '> **ESM-Scan**  </font> 
+
+## *in silico* complete saturation mutagenesis of a protein using Evolutionary Scale Modeling ([ESM](https://github.com/facebookresearch/esm))
+
+
+For an input protein sequence, evaluate the impact of every possible mutations.
+
+---
 
 
 ## Colab webserver
