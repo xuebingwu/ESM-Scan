@@ -4,7 +4,7 @@
 
 # <font color='MediumSlateBlue '> **ESM-Scan**  </font> 
 
-## Predict the impact of every possible mutation in a protein using Evolutionary Scale Modeling ([ESM](https://github.com/facebookresearch/esm))
+## Predict the impact of every possible mutation in any protein using Evolutionary Scale Modeling ([ESM](https://github.com/facebookresearch/esm))
 
 ---
 
