@@ -11,7 +11,7 @@ import torch
 
 from esm import Alphabet, FastaBatchedDataset, ProteinBertModel, pretrained, MSATransformer
 import pandas as pd
-from tqdm import tqdm
+from tqdm.notebook import tqdm
 from Bio import SeqIO
 import itertools
 from typing import List, Tuple
